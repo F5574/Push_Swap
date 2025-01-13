@@ -6,10 +6,13 @@
 /*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 18:45:43 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2025/01/08 21:33:13 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2025/01/13 15:12:24 by gvon-ah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
+void	init_push_swap(void)
+{
+	printf("Success \n");
+}
