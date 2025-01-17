@@ -6,7 +6,7 @@
 /*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 18:29:29 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2025/01/13 17:10:59 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2025/01/17 17:42:00 by gvon-ah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,15 @@
 
 typedef struct s_stack
 {
-	long	*var;
-	size_t	size;
+	int			*var;
+	size_t		size;
 }	t_stack;
 
-int	is_valid(t_stack *a, char **argv);
+void	swap_stack_firsts(t_stack *stack);
+void	push_to_stack(t_stack *input, t_stack *output);
+void	Swap_Stacks(t_stack *stack);
+void	init_push_swap(t_stack *a, t_stack *b);
+int		is_valid(t_stack *a, char **argv);
 int		main(int argc, char **argv);
-void	init_push_swap(void);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 21:09:00 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2025/01/13 17:16:09 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2025/01/17 17:42:29 by gvon-ah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,29 +37,30 @@ static int	checker_isnum(char **arr)
 static int	checker_dup(t_stack *a, char **arr)
 {
 	long	ver;
-	size_t		i;
-	size_t		c;
+	size_t	i;
+	size_t	c;
 
 	i = 0;
-	ver = 2147483648;
-	a->var = malloc(sizeof(long) * (a->size + 1));
+	a->var = malloc(sizeof(int) * a->size);
 	if (!a->var)
 		return (0);
 	while (i < a->size)
 	{
-		a->var[i] = ft_atoi(arr[i]);
-		if (a->var[i++] == ver)
-			return (free(a->var), 0);
+		ver = ft_atoi(arr[i]);
+		if (ver > INT_MAX || ver < INT_MIN)
+			return (0);
+		a->var[i++] = (int)ver;
 	}
 	i = 0;
-	while (arr[i++])
+	while (i < a->size -1)
 	{
 		c = i + 1;
 		while (c < a->size)
 			if (a->var[i] == a->var[c++])
-				return (free(a->var), 0);
+				return (0);
+		i++;
 	}
-	return (free(a->var), 1);
+	return (1);
 }
 
 int	is_valid(t_stack *a, char **argv)

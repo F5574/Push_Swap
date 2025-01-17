@@ -6,7 +6,7 @@
 /*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 18:45:48 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2025/01/13 17:14:04 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2025/01/17 18:15:29 by gvon-ah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,10 @@
 int	main(int argc, char **argv)
 {
 	int		i;
-	t_stack a;
+	t_stack	a;
 	t_stack	b;
 
-	a = (t_stack){.var = NULL, .size = 0};
-	b = (t_stack){.var = NULL, .size = 0};
+	// a = (t_stack){.var = NULL, .size = 0};
 	i = 0;
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (0);
@@ -28,9 +27,8 @@ int	main(int argc, char **argv)
 	else
 		argv = &argv[1];
 	if (is_valid(&a, argv))
-		init_push_swap();
-	ft_printf("fez alguma coisa");
+	{
+		init_push_swap(&a, &b);
+	}
 	return (0);
 }
-
-
