@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   push_adds.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/08 18:45:48 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2025/01/28 17:34:29 by gvon-ah-         ###   ########.fr       */
+/*   Created: 2025/01/28 12:51:55 by gvon-ah-          #+#    #+#             */
+/*   Updated: 2025/01/28 17:07:32 by gvon-ah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
-{
-	int		i;
-	t_stack	*a;
-	t_stack	*b;
-	
-	i = 0;
-	a = NULL;
-	b = NULL;
-	if (argc == 1 || (argc == 2 && !argv[1][0]))
-		return (0);
-	else if (argc == 2)
-		argv = ft_split(argv[1], 32);
-	else
-	 	argv = &argv[1];
-	if (is_valid(&a, argv))
-	{
-		init_push_swap(&a, &b);
-	}
-	return (0);
-}
+// void	add_front(t_stack **stack, t_stack *new)
+// {
+// 	new->next = *stack;
+// 	*stack = new;
+// }
+
+// void	add_back(t_stack **stack, t_stack *new)
+// {
+// 	t_stack	*cur;
+
+// 	if (!*stack)
+// 	{
+// 		*stack = new;
+// 		return ;
+// 	}
+// 	cur = *stack;
+// 	while (cur->next)
+// 		cur = cur->next;
+// 	cur->next = new;
+// }

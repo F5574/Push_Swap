@@ -6,7 +6,7 @@
 /*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 21:09:00 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2025/01/17 17:42:29 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2025/01/28 17:27:24 by gvon-ah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,46 +34,85 @@ static int	checker_isnum(char **arr)
 	return (1);
 }
 
-static int	checker_dup(t_stack *a, char **arr)
+static int verify_overflow(char *arr)
 {
-	long	ver;
-	size_t	i;
-	size_t	c;
+	long num;
 
-	i = 0;
-	a->var = malloc(sizeof(int) * a->size);
-	if (!a->var)
-		return (0);
-	while (i < a->size)
+	num = 0;
+	num = ft_atoi(arr);
+	if (num > INT_MAX || num < INT_MIN)
+            return (0);
+	return (1);
+} 
+
+static int	init_stack(t_stack **a, char **argv)
+{
+	size_t	i;
+   	t_stack	*new_node;
+    t_stack	*current;
+	
+	i = -1;
+	while (argv[++i])
 	{
-		ver = ft_atoi(arr[i]);
-		if (ver > INT_MAX || ver < INT_MIN)
+		new_node = malloc(sizeof(t_stack));
+		if (!new_node)
 			return (0);
-		a->var[i++] = (int)ver;
+		if (!verify_overflow(argv[i]))
+			return (free (new_node), 0);
+		new_node->num = (int)ft_atoi(argv[i]);
+		new_node->next = NULL;
+		if (*a == NULL)
+			*a = new_node;
+		else
+		{
+			current = *a;
+			while (current->next)
+				current = current->next;
+			current->next = new_node;
+		}
 	}
-	i = 0;
-	while (i < a->size -1)
+	return (1);
+}
+static int	checker_dup(t_stack **a, char **arr)
+{
+	size_t	i;
+	int		curr;
+	int 	flag;
+	t_stack	*current;
+	
+	while (*a)
 	{
-		c = i + 1;
-		while (c < a->size)
-			if (a->var[i] == a->var[c++])
-				return (0);
-		i++;
+		i = -1;
+		while (arr[++i])
+		{
+			flag = 0;
+			curr = (int)ft_atoi(arr[i]);
+			current = *a;
+			while (current)
+			{
+				if (current->num == curr && flag  == 1)
+					return (0);
+				if (current->num == curr && flag  == 0)
+					flag = 1;
+				current = current->next;
+			} 
+		}
+		a = &(*a)->next;
 	}
 	return (1);
 }
 
-int	is_valid(t_stack *a, char **argv)
+int	is_valid(t_stack **a, char **argv)
 {
-	size_t	i;
 
-	i = 0;
-	while (argv[i])
-		i++;
-	a->size = i;
-	if (!checker_isnum(argv))
+	if (checker_isnum(argv))
+	{
+		if (!init_stack(a, argv))
+			return (0);
+	}
+	else
 		return (0);
-	else if (!checker_dup(a, argv))
+	if (!checker_dup(a, argv))
 		return (0);
 	return (1);
 }
