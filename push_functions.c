@@ -6,13 +6,13 @@
 /*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 18:45:45 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2025/01/28 17:06:37 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2025/01/30 12:37:37 by gvon-ah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap_stack_firsts(t_stack **stack)
+void	swap_stack_firsts(t_stack **stack, char c, int flag)
 {
 	int	buff;
 
@@ -22,9 +22,11 @@ void	swap_stack_firsts(t_stack **stack)
 		(*stack)->num = (*stack)->next->num;
 		(*stack)->next->num = buff;
 	}
+	if (!flag)
+		ft_printf("s%c\n", c);
 }
 
-void	push_to_stack(t_stack **input, t_stack **output)
+void	push_to_stack(t_stack **input, t_stack **output, char c)
 {
 	t_stack *temp;
 	
@@ -35,10 +37,10 @@ void	push_to_stack(t_stack **input, t_stack **output)
 		temp->next = *output;
 		*output = temp;
 	}
-	
+	ft_printf("p%c\n", c);
 }
 
-void	rotate_stack(t_stack **stack)
+void	rotate_stack(t_stack **stack, char c, int flag)
 {
 	t_stack *first;
 	t_stack *last;
@@ -53,9 +55,11 @@ void	rotate_stack(t_stack **stack)
 			last = last->next;
 		last->next = first;
 	}
+	if (!flag)
+		ft_printf("r%c\n", c);
 }
 
-void	inverse_rotate_stack(t_stack **stack)
+void	reverse_rotate_stack(t_stack **stack, char c, int flag)
 {
 	t_stack *before;
 	t_stack *curr;
@@ -72,5 +76,18 @@ void	inverse_rotate_stack(t_stack **stack)
 		curr->next = *stack;
 		*stack = curr;
 	}
+	if (!flag)
+		ft_printf("rr%c\n", c);
 }
 
+void	free_stack(t_stack *stack)
+{
+ 	t_stack *temp;
+
+    while (stack)
+    {
+        temp = stack;
+        stack = stack->next;
+        free(temp);
+    }
+}

@@ -6,7 +6,7 @@
 /*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 21:09:00 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2025/01/28 17:27:24 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2025/01/29 19:03:46 by gvon-ah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,6 @@ static int	checker_dup(t_stack **a, char **arr)
 
 int	is_valid(t_stack **a, char **argv)
 {
-
 	if (checker_isnum(argv))
 	{
 		if (!init_stack(a, argv))
