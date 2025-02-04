@@ -1,4 +1,4 @@
-SRCS = push_functions.c push_aux.c push_swap.c push_validator.c
+SRCS = push_functions.c push_aux.c push_swap.c push_validator.c push_sortsmall.c push_sortbig.c
 
 NAME = push_swap
 

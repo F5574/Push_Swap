@@ -6,7 +6,7 @@
 /*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 18:45:43 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2025/01/30 16:11:25 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2025/02/04 21:33:06 by gvon-ah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,20 +46,39 @@ void double_reverse_rotate(t_stack **a, t_stack **b)
 
 void	init_push_swap(t_stack **a, t_stack **b)
 {
+	int		count;
+	t_stack	*for_count;
+
+	count = 0;
+	for_count = *a;
+	while(for_count->next)
+	{
+		for_count = for_count->next;
+		count++;
+	}
+	ft_printf("count inital stack %d \n", count + 1);
+	
+	if(count < 3)
+		sort_small(a, count + 1);
+	else
+	{
+	ft_printf("sort_big \n");
+		//sort_big(a,b);
     print_stack(*a, "A");
     print_stack(*b, "B");
-    ft_printf("pushing \n");
+    // ft_printf("pushing \n");
 
-	push_to_stack(a,b, 'b');
-	push_to_stack(a,b, 'b');
-	push_to_stack(a,b, 'b');
-	push_to_stack(a,b, 'b');
+	// push_to_stack(a,b, 'b');
+	// push_to_stack(a,b, 'b');
+	// push_to_stack(a,b, 'b');
+	// push_to_stack(a,b, 'b');
 	
-	print_stack(*a, "A");
-    print_stack(*b, "B");
+	// print_stack(*a, "A");
+    // print_stack(*b, "B");
 	
-    ft_printf("sort \n");
-	double_reverse_rotate(a,b);
-	print_stack(*a, "A");
-    print_stack(*b, "B");
+    // ft_printf("sort \n");
+	// double_reverse_rotate(a,b);
+	// print_stack(*a, "A");
+    // print_stack(*b, "B");
+	}
 }
