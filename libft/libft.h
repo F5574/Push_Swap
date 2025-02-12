@@ -6,7 +6,7 @@
 /*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 19:55:54 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2025/01/13 15:03:12 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2025/02/06 17:00:07 by gvon-ah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # define EX_UP_BASE "0123456789ABCDEF"
 # define POSSIBLE_FLAGS "cspdiuxX%"
 
-# include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>

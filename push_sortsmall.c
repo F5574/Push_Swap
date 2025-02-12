@@ -6,13 +6,13 @@
 /*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 18:13:47 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2025/02/04 21:31:44 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2025/02/12 21:34:48 by gvon-ah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
-static void	sort_for_3(t_stack **a)
+void	sort_for_3(t_stack **a)
 {
 	t_stack	*current;
 
@@ -53,4 +53,19 @@ void	sort_small(t_stack **a, int count)
 	}
 	if (count == 3)
 		sort_for_3(a);
+}
+
+size_t	stack_len(t_stack **s)
+{
+	size_t	i;
+	t_stack *count;
+	
+	count = *s;
+	i = 0;
+	while (count->next)
+	{
+		i++;
+		count = count->next;
+	}
+	return (i);
 }

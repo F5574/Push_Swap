@@ -6,7 +6,7 @@
 /*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 18:45:43 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2025/02/04 21:33:06 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2025/02/12 21:18:41 by gvon-ah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	print_stack(t_stack *stack, const char *name)
 {
-     printf("Stack %s: ", name);
+    ft_printf("Stack %s: ", name);
     while (stack)
     {
-        printf("%d ", stack->num);
+        ft_printf("%d ", stack->num);
         stack = stack->next;
     }
-    printf("\n");
+    ft_printf("\n");
 }
 
 void double_swap_firsts(t_stack **a, t_stack **b)
@@ -56,29 +56,16 @@ void	init_push_swap(t_stack **a, t_stack **b)
 		for_count = for_count->next;
 		count++;
 	}
-	ft_printf("count inital stack %d \n", count + 1);
+	//ft_printf("count inital stack %d \n", count + 1);
 	
 	if(count < 3)
 		sort_small(a, count + 1);
 	else
 	{
 	ft_printf("sort_big \n");
-		//sort_big(a,b);
+		short_big(a,b);
     print_stack(*a, "A");
     print_stack(*b, "B");
-    // ft_printf("pushing \n");
-
-	// push_to_stack(a,b, 'b');
-	// push_to_stack(a,b, 'b');
-	// push_to_stack(a,b, 'b');
-	// push_to_stack(a,b, 'b');
-	
-	// print_stack(*a, "A");
-    // print_stack(*b, "B");
-	
-    // ft_printf("sort \n");
-	// double_reverse_rotate(a,b);
-	// print_stack(*a, "A");
-    // print_stack(*b, "B");
+	ft_printf("count: %i", (int)stack_len(a));
 	}
 }
