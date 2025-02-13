@@ -6,7 +6,7 @@
 /*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 18:29:29 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2025/02/12 21:34:59 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2025/02/13 15:28:36 by gvon-ah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,9 @@ typedef struct s_stack
 void 	sort_small(t_stack **a, int count);
 void	sort_for_3(t_stack **a);
 size_t	stack_len(t_stack **s);
+void	double_swap_firsts(t_stack **a, t_stack **b);
+void	double_rotate(t_stack **a, t_stack **b);
+void	double_reverse_rotate(t_stack **a, t_stack **b);
 void	swap_stack_firsts(t_stack **stack, char c, int flag);
 void	push_to_stack(t_stack **input, t_stack **output, char c);
 void	rotate_stack(t_stack **stack,  char c, int flag);

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_sortbig.c                                     :+:      :+:    :+:   */
+/*   push_init_a.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 19:46:32 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2025/02/12 21:21:53 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2025/02/13 18:46:09 by gvon-ah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	current_index(t_stack *stack)
 		i++;
 	}
 }
+
 static void	set_target_a(t_stack *a, t_stack *b)
 {
 	t_stack *current_b;
@@ -59,7 +60,7 @@ static void	set_target_a(t_stack *a, t_stack *b)
 	}	
 }
 
-static void	cost_analysis(t_stack  *a, t_stack *b)
+static void	cost_analysis_a(t_stack  *a, t_stack *b)
 {
 	int b_len;
 	int a_len;
@@ -99,11 +100,11 @@ void	set_cheapest(t_stack *stack)
 	c_node->cheapest = true;
 }
 
-void	init_nodes(t_stack *a, t_stack *b)
+void	init_nodes_a(t_stack *a, t_stack *b)
 {
 	current_index(a);
 	current_index(b);
-	set_target(a,b);
-	cost_analysis(a,b);
+	set_target_a(a,b);
+	cost_analysis_a(a,b);
 	set_cheapest(a);
 }
