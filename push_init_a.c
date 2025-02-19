@@ -6,7 +6,7 @@
 /*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 19:46:32 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2025/02/13 18:46:09 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2025/02/19 19:36:13 by gvon-ah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static void	set_target_a(t_stack *a, t_stack *b)
 			current_b = current_b->next;
 		}
 		if (best == LONG_MIN)
-			a->target = find_max(b);
+			a->target = max_n(b);
 		else
 			a->target = target;
 		a = a->next;
@@ -100,7 +100,7 @@ void	set_cheapest(t_stack *stack)
 	c_node->cheapest = true;
 }
 
-void	init_nodes_a(t_stack *a, t_stack *b)
+void	init_a(t_stack *a, t_stack *b)
 {
 	current_index(a);
 	current_index(b);

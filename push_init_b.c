@@ -6,7 +6,7 @@
 /*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 18:45:11 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2025/02/13 18:51:56 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2025/02/19 17:25:12 by gvon-ah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static void	set_target_b(t_stack *a, t_stack *b)
 }
 
 
-void	init_nodes_b(t_stack *a, t_stack *b)
+void	init_b(t_stack *a, t_stack *b)
 {
 	current_index(a);
 	current_index(b);
