@@ -6,7 +6,7 @@
 /*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 18:45:11 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2025/02/19 17:25:12 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2025/02/21 16:02:38 by gvon-ah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@ static void	set_target_b(t_stack *a, t_stack *b)
 {
 	t_stack	*curr;
 	t_stack	*target;
-	int		best;
+	long		best;
 
 	while (b)
 	{
-		best = INT_MAX;
+		best = LONG_MAX;
 		curr = a;
 		while (curr)
 		{
@@ -30,7 +30,7 @@ static void	set_target_b(t_stack *a, t_stack *b)
 			}
 			curr = curr->next;
 		}
-		if (best == INT_MAX)
+		if (best == LONG_MAX)
 			b->target = min_n(a);
 		else
 			b->target = target;

@@ -6,7 +6,7 @@
 /*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 18:13:47 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2025/02/19 17:20:32 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2025/02/21 17:11:43 by gvon-ah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,13 @@ size_t	stack_len(t_stack *s)
 {
 	size_t	i;
 
+	if (!s)
+		return (0);
 	i = 0;
-	while (s->next)
+	while (s)
 	{
-		i++;
 		s = s->next;
+		i++;
 	}
 	return (i);
 }

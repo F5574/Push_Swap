@@ -6,7 +6,7 @@
 /*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 19:46:32 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2025/02/19 19:36:13 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2025/02/21 16:28:08 by gvon-ah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	current_index(t_stack *stack)
 		else
 			stack->above_median = false;
 		stack = stack->next;
-		i++;
+		++i;
 	}
 }
 
@@ -62,8 +62,8 @@ static void	set_target_a(t_stack *a, t_stack *b)
 
 static void	cost_analysis_a(t_stack  *a, t_stack *b)
 {
-	int b_len;
 	int a_len;
+	int b_len;
 
 	a_len = stack_len(a);
 	b_len = stack_len(b);

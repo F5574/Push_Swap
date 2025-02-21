@@ -6,7 +6,7 @@
 /*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 21:09:00 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2025/02/19 18:27:09 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2025/02/21 19:13:11 by gvon-ah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,10 @@ int	is_valid(t_stack **a, char **argv)
 	if (checker_isnum(argv))
 	{
 		if (!init_stack(a, argv))
+		{
+			free_stack(*a);
 			return (0);
+		}
 	}
 	else
 		return (0);

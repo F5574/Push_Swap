@@ -6,7 +6,7 @@
 /*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:37:00 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2025/02/13 15:55:43 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2025/02/21 16:06:16 by gvon-ah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@ bool	is_sort(t_stack *stack)
 
 t_stack	*min_n(t_stack *stack)
 {
-	int	min;
+	long	min;
 	t_stack	*min_n;
 	
 	if(!stack)
 		return (NULL);
-	min = INT_MAX;
+	min = LONG_MAX;
 	while (stack)
 	{
 		if (stack->num < min)
@@ -56,15 +56,15 @@ t_stack	*min_n(t_stack *stack)
 
 t_stack	*max_n(t_stack *stack)
 {
-	int	max;
+	long	max;
 	t_stack	*max_n;
 	
 	if(!stack)
 		return (NULL);
-	max = INT_MIN;
+	max = LONG_MIN;
 	while (stack)
 	{
-		if (stack->num < max)
+		if (stack->num > max)
 		{
 			max = stack->num;
 			max_n = stack;
