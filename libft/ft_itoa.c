@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gisrael <gisrael@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 12:26:42 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2024/11/04 12:49:43 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2025/02/24 15:36:39 by gisrael          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	get_d(int b)
+static int	get_d(int b)
 {
-	size_t	i;
-	size_t	buf;
+	long int	i;
+	long int	buf;
 
 	buf = b;
 	i = 1;
@@ -35,7 +35,7 @@ static size_t	get_d(int b)
 char	*ft_itoa(int n)
 {
 	char	*res;
-	size_t	i;
+	int		i;
 	long	num;
 
 	num = n;

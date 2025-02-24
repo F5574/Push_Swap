@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+         #
+#    By: gisrael <gisrael@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/29 14:21:25 by gvon-ah-          #+#    #+#              #
-#    Updated: 2025/01/06 17:31:44 by gvon-ah-         ###   ########.fr        #
+#    Updated: 2025/02/24 15:57:21 by gisrael          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,9 @@ LST = ft_lstsize.c ft_lstadd_front.c ft_lstlast.c ft_lstnew.c ft_lstadd_back.c \
 
 PLUS = ft_printf.c ft_prinft_functions_aux.c
 
-OBJS = $(SRCS:%.c=%.o) $(LST:.c=.o) $(PLUS:.c=.o)
+OBJS_DIR = objs
+
+OBJS = $(addprefix $(OBJS_DIR)/,$(SRCS:%.c=%.o) $(LST:.c=.o) $(PLUS:.c=.o))
 
 NAME = libft.a
 
@@ -38,11 +40,13 @@ RM = rm -f
 
 all: $(NAME) 
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+$(OBJS_DIR)/%.o: %.c
+	@mkdir -p $(dir @%)	
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
 	@$(COMPRESS) $(NAME) $(OBJS)
+	@echo $(NAME) Compiled! 	
 
 clean:
 	@$(RM) $(OBJS)

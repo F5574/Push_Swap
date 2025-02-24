@@ -8,7 +8,9 @@ RM = rm -f
 
 CFLAGS = -Wall -Wextra -Werror -g
 
-OBJS = $(SRCS:.c=.o)
+OBJS_DIR = objs
+
+OBJS = $(addprefix $(OBJS_DIR)/,$(SRCS:.c=.o))
 
 CC = cc
 
@@ -18,8 +20,13 @@ LIBFT = $(LIBFTDIR)/libft.a
 
 all: $(NAME)
 
+$(OBJS_DIR)/%.o: %.c
+	@mkdir -p $(dir @%)
+	@$(CC) $(CFLAGS) -c $< -o $@ 		
+
 $(NAME): $(LIBFT) $(OBJS)
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT)
+	@echo $(NAME) Compiled! 	
 
 $(LIBFT):
 	@$(MAKE) -C $(LIBFTDIR) --no-print-directory

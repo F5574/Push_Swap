@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gisrael <gisrael@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 18:45:48 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2025/02/21 19:36:02 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2025/02/24 15:39:45 by gisrael          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 int	main(int argc, char **argv)
 {
-	int		i;
 	t_stack	*a;
 	t_stack	*b;
-	
-	i = 0;
+
 	a = NULL;
 	b = NULL;
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
