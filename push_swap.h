@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gisrael <gisrael@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 18:29:29 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2025/02/19 17:30:05 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2025/02/28 16:47:43 by gisrael          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,18 @@ typedef struct s_stack
 
 //push_aux.c
 
-
-void	print_stack(t_stack *stack, const char *name); // remove later
 void	double_swap_firsts(t_stack **a, t_stack **b);
 void	double_rotate(t_stack **a, t_stack **b);
 void	double_reverse_rotate(t_stack **a, t_stack **b);
 void	init_push_swap(t_stack **a, t_stack **b);
+// void	print_stack(t_stack *stack, const char *name);
 
 //push_functions.c
 
 void	swap_stack_firsts(t_stack **stack, char c, int flag);
 void	push_to_stack(t_stack **input, t_stack **output, char c);
-void	rotate_stack(t_stack **stack,  char c, int flag);
-void	reverse_rotate_stack(t_stack **stack,  char c, int flag);
+void	rotate_stack(t_stack **stack, char c, int flag);
+void	reverse_rotate_stack(t_stack **stack, char c, int flag);
 void	free_stack(t_stack *stack);
 
 //push_init_a.c
@@ -61,16 +60,17 @@ void	sort_stacks(t_stack **a, t_stack **b);
 //push_prep.c
 
 void	prep_for_push(t_stack **stack, t_stack *top, char c);
+void	min_top(t_stack **stack);
 
 //push_sortsmall.c
 
-void 	sort_small(t_stack **a, int count);
-void	sort_for_3(t_stack **a);
+void	sort_small(t_stack **a, int count);
+void	sort_for_3(t_stack *a);
 size_t	stack_len(t_stack *s);
 
 //push_validator.c
 
-int	is_valid(t_stack **a, char **argv);
+int		is_valid(t_stack **a, char **argv);
 
 // push_utils.c
 

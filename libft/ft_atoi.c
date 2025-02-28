@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gisrael <gisrael@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 20:02:47 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2025/01/13 15:19:39 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2025/02/28 16:45:08 by gisrael          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ long	ft_atoi(const char *str)
 	long	ver;
 	int		a;
 	int		count;
-
 
 	a = 0;
 	res = 0;

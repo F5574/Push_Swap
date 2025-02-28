@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gisrael <gisrael@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:37:00 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2025/02/21 16:06:16 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2025/02/28 16:37:12 by gisrael          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_stack	*last_n(t_stack *stack)
 {
-	if(!stack)
+	if (!stack)
 		return (NULL);
 	while (stack->next)
 		stack = stack->next;
@@ -23,7 +23,7 @@ t_stack	*last_n(t_stack *stack)
 
 bool	is_sort(t_stack *stack)
 {
-	if(!stack)
+	if (!stack)
 		return (true);
 	while (stack->next)
 	{
@@ -38,8 +38,8 @@ t_stack	*min_n(t_stack *stack)
 {
 	long	min;
 	t_stack	*min_n;
-	
-	if(!stack)
+
+	if (!stack)
 		return (NULL);
 	min = LONG_MAX;
 	while (stack)
@@ -58,8 +58,8 @@ t_stack	*max_n(t_stack *stack)
 {
 	long	max;
 	t_stack	*max_n;
-	
-	if(!stack)
+
+	if (!stack)
 		return (NULL);
 	max = LONG_MIN;
 	while (stack)
@@ -76,7 +76,7 @@ t_stack	*max_n(t_stack *stack)
 
 t_stack	*get_cheapest(t_stack *stack)
 {
-	if(!stack)
+	if (!stack)
 		return (NULL);
 	while (stack)
 	{

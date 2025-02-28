@@ -3,25 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   push_init_a.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gisrael <gisrael@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 19:46:32 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2025/02/21 16:28:08 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2025/02/28 16:26:06 by gisrael          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include "push_swap.h"
 
 void	current_index(t_stack *stack)
 {
-	int 	i;
-	int 	median;
+	int	i;
+	int	median;
 
 	i = 0;
-	if(!stack)
+	if (!stack)
 		return ;
 	median = stack_len(stack) / 2;
-	while(stack)
+	while (stack)
 	{
 		stack->index = i;
 		if (i <= median)
@@ -35,10 +35,10 @@ void	current_index(t_stack *stack)
 
 static void	set_target_a(t_stack *a, t_stack *b)
 {
-	t_stack *current_b;
+	t_stack	*current_b;
 	t_stack	*target;
 	long	best;
-	
+
 	while (a)
 	{
 		best = LONG_MIN;
@@ -57,13 +57,13 @@ static void	set_target_a(t_stack *a, t_stack *b)
 		else
 			a->target = target;
 		a = a->next;
-	}	
+	}
 }
 
-static void	cost_analysis_a(t_stack  *a, t_stack *b)
+static void	cost_analysis_a(t_stack *a, t_stack *b)
 {
-	int a_len;
-	int b_len;
+	int	a_len;
+	int	b_len;
 
 	a_len = stack_len(a);
 	b_len = stack_len(b);
@@ -104,7 +104,7 @@ void	init_a(t_stack *a, t_stack *b)
 {
 	current_index(a);
 	current_index(b);
-	set_target_a(a,b);
-	cost_analysis_a(a,b);
+	set_target_a(a, b);
+	cost_analysis_a(a, b);
 	set_cheapest(a);
 }

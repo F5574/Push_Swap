@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_validator.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gisrael <gisrael@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 21:09:00 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2025/02/21 19:13:11 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2025/02/28 16:38:33 by gisrael          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,23 +34,23 @@ static int	checker_isnum(char **arr)
 	return (1);
 }
 
-static int verify_overflow(char *arr)
+static int	verify_overflow(char *arr)
 {
-	long num;
+	long	num;
 
 	num = 0;
 	num = ft_atoi(arr);
 	if (num > INT_MAX || num < INT_MIN)
-            return (0);
+		return (0);
 	return (1);
-} 
+}
 
 static int	init_stack(t_stack **a, char **argv)
 {
 	size_t	i;
-   	t_stack	*new_node;
-    t_stack	*current;
-	
+	t_stack	*new_node;
+	t_stack	*current;
+
 	i = -1;
 	while (argv[++i])
 	{
@@ -73,13 +73,14 @@ static int	init_stack(t_stack **a, char **argv)
 	}
 	return (1);
 }
+
 static int	checker_dup(t_stack **a, char **arr)
 {
 	size_t	i;
 	int		curr;
-	int 	flag;
+	int		flag;
 	t_stack	*current;
-	
+
 	while (*a)
 	{
 		i = -1;
@@ -90,12 +91,12 @@ static int	checker_dup(t_stack **a, char **arr)
 			current = *a;
 			while (current)
 			{
-				if (current->num == curr && flag  == 1)
+				if (current->num == curr && flag == 1)
 					return (0);
-				if (current->num == curr && flag  == 0)
+				if (current->num == curr && flag == 0)
 					flag = 1;
 				current = current->next;
-			} 
+			}
 		}
 		a = &(*a)->next;
 	}
