@@ -6,7 +6,7 @@
 /*   By: gisrael <gisrael@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 18:55:00 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2025/02/28 16:32:39 by gisrael          ###   ########.fr       */
+/*   Updated: 2025/03/04 13:37:39 by gisrael          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,22 @@ void	min_top(t_stack **stack)
 			rotate_stack(stack, 'a', 0);
 		else
 			reverse_rotate_stack(stack, 'a', 0);
+	}
+}
+
+void	free_arg(char **argv)
+{
+	int	i;
+
+	i = 0;
+	if (argv && *argv)
+	{
+		while (argv[i])
+		{
+			free(argv[i]);
+			i++;
+		}
+		free(argv);
+		argv = NULL;
 	}
 }

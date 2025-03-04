@@ -6,7 +6,7 @@
 /*   By: gisrael <gisrael@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 21:09:00 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2025/02/28 16:38:33 by gisrael          ###   ########.fr       */
+/*   Updated: 2025/03/04 13:27:34 by gisrael          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,17 +105,22 @@ static int	checker_dup(t_stack **a, char **arr)
 
 int	is_valid(t_stack **a, char **argv)
 {
+	bool	ver;
+
+	ver = true;
 	if (checker_isnum(argv))
 	{
 		if (!init_stack(a, argv))
 		{
 			free_stack(*a);
-			return (0);
+			ver = false;
 		}
 	}
 	else
-		return (0);
+		ver = false;
 	if (!checker_dup(a, argv))
-		return (0);
-	return (1);
+		ver = false;
+	if (!ver)
+		ft_printf("Error \n");
+	return (ver);
 }

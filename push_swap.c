@@ -6,7 +6,7 @@
 /*   By: gisrael <gisrael@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 18:45:48 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2025/02/28 16:47:02 by gisrael          ###   ########.fr       */
+/*   Updated: 2025/03/04 13:38:02 by gisrael          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,26 @@ int	main(int argc, char **argv)
 {
 	t_stack	*a;
 	t_stack	*b;
+	char	**split;
 
 	a = NULL;
 	b = NULL;
+	split = NULL;
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (1);
 	else if (argc == 2)
 	{
-		argv = ft_split(argv[1], 32);
-		if (!argv[1])
-			return (free(argv[0]), free(argv), 1);
+		split = ft_split(argv[1], 32);
+		if (!split || !argv[1])
+			return (free(split), 1);
+		argv = split;
 	}
 	else
 		argv = &argv[1];
 	if (is_valid(&a, argv))
 		init_push_swap(&a, &b);
-	else
-		ft_printf("Error \n");
+	if (split)
+		free_arg(split);
 	free_stack(a);
 	return (0);
 }
