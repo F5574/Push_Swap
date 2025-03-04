@@ -6,7 +6,7 @@
 /*   By: gisrael <gisrael@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 19:51:14 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2025/02/28 16:41:38 by gisrael          ###   ########.fr       */
+/*   Updated: 2025/02/28 17:07:06 by gisrael          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	sort_stacks(t_stack **a, t_stack **b)
 		init_a(*a, *b);
 		move_to_b(a, b);
 	}
-	sort_for_3(*a);
+	sort_for_3(a);
 	while (*b)
 	{
 		init_b(*a, *b);

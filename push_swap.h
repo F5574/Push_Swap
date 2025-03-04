@@ -6,7 +6,7 @@
 /*   By: gisrael <gisrael@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 18:29:29 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2025/02/28 16:47:43 by gisrael          ###   ########.fr       */
+/*   Updated: 2025/02/28 17:06:37 by gisrael          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	min_top(t_stack **stack);
 //push_sortsmall.c
 
 void	sort_small(t_stack **a, int count);
-void	sort_for_3(t_stack *a);
+void	sort_for_3(t_stack **a);
 size_t	stack_len(t_stack *s);
 
 //push_validator.c
