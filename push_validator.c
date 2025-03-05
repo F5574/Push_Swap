@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_validator.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gisrael <gisrael@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 21:09:00 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2025/03/04 13:27:34 by gisrael          ###   ########.fr       */
+/*   Updated: 2025/03/05 16:12:47 by gvon-ah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,11 @@ static int	verify_overflow(char *arr)
 	return (1);
 }
 
-static int	init_stack(t_stack **a, char **argv)
+static int	init_stack(t_stack **a, char **argv, size_t i)
 {
-	size_t	i;
 	t_stack	*new_node;
 	t_stack	*current;
 
-	i = -1;
 	while (argv[++i])
 	{
 		new_node = malloc(sizeof(t_stack));
@@ -61,6 +59,7 @@ static int	init_stack(t_stack **a, char **argv)
 			return (free (new_node), 0);
 		new_node->num = (int)ft_atoi(argv[i]);
 		new_node->next = NULL;
+		new_node->cheapest = false;
 		if (*a == NULL)
 			*a = new_node;
 		else
@@ -110,7 +109,7 @@ int	is_valid(t_stack **a, char **argv)
 	ver = true;
 	if (checker_isnum(argv))
 	{
-		if (!init_stack(a, argv))
+		if (!init_stack(a, argv, -1))
 		{
 			free_stack(*a);
 			ver = false;
