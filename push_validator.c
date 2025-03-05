@@ -6,7 +6,7 @@
 /*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 21:09:00 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2025/03/05 16:12:47 by gvon-ah-         ###   ########.fr       */
+/*   Updated: 2025/03/05 18:49:43 by gvon-ah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ static int	checker_isnum(char **arr)
 	while (arr[i])
 	{
 		y = 0;
+		if (!arr[i][0])
+			return (0);
 		if (arr[i][y] == '-' || arr[i][y] == '+')
 			y++;
 		while (arr[i][y])
@@ -48,7 +50,6 @@ static int	verify_overflow(char *arr)
 static int	init_stack(t_stack **a, char **argv, size_t i)
 {
 	t_stack	*new_node;
-	t_stack	*current;
 
 	while (argv[++i])
 	{
@@ -63,12 +64,7 @@ static int	init_stack(t_stack **a, char **argv, size_t i)
 		if (*a == NULL)
 			*a = new_node;
 		else
-		{
-			current = *a;
-			while (current->next)
-				current = current->next;
-			current->next = new_node;
-		}
+			add_back(*a, new_node);
 	}
 	return (1);
 }
@@ -104,22 +100,14 @@ static int	checker_dup(t_stack **a, char **arr)
 
 int	is_valid(t_stack **a, char **argv)
 {
-	bool	ver;
-
-	ver = true;
 	if (checker_isnum(argv))
 	{
 		if (!init_stack(a, argv, -1))
-		{
-			free_stack(*a);
-			ver = false;
-		}
+			return (ft_printf("Error \n"), false);
 	}
 	else
-		ver = false;
+		return (ft_printf("Error \n"), false);
 	if (!checker_dup(a, argv))
-		ver = false;
-	if (!ver)
-		ft_printf("Error \n");
-	return (ver);
+		return (ft_printf("Error \n"), false);
+	return (true);
 }

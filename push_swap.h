@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gisrael <gisrael@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 18:29:29 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2025/03/04 13:34:35 by gisrael          ###   ########.fr       */
+/*   Updated: 2025/03/05 17:58:35 by gvon-ah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ void	sort_stacks(t_stack **a, t_stack **b);
 void	prep_for_push(t_stack **stack, t_stack *top, char c);
 void	min_top(t_stack **stack);
 void	free_arg(char **argv);
+void	add_back(t_stack *a, t_stack *new_n);
 
 //push_sortsmall.c
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_prep.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gisrael <gisrael@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 18:55:00 by gvon-ah-          #+#    #+#             */
-/*   Updated: 2025/03/04 13:37:39 by gisrael          ###   ########.fr       */
+/*   Updated: 2025/03/05 18:49:27 by gvon-ah-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,11 @@ void	free_arg(char **argv)
 		free(argv);
 		argv = NULL;
 	}
+}
+
+void	add_back(t_stack *a, t_stack *new_n)
+{
+	while (a->next)
+		a = a->next;
+	a->next = new_n;
 }
