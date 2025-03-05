@@ -21,7 +21,7 @@ LIBFT = $(LIBFTDIR)/libft.a
 all: $(NAME)
 
 $(OBJS_DIR)/%.o: %.c
-	@mkdir -p $(dir @%)
+	@mkdir -p $(OBJS_DIR)
 	@$(CC) $(CFLAGS) -c $< -o $@ 		
 
 $(NAME): $(LIBFT) $(OBJS)

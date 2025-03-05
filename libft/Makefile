@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gisrael <gisrael@student.42.fr>            +#+  +:+       +#+         #
+#    By: gvon-ah- <gvon-ah-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/29 14:21:25 by gvon-ah-          #+#    #+#              #
-#    Updated: 2025/02/24 15:57:21 by gisrael          ###   ########.fr        #
+#    Updated: 2025/03/05 19:12:27 by gvon-ah-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ RM = rm -f
 all: $(NAME) 
 
 $(OBJS_DIR)/%.o: %.c
-	@mkdir -p $(dir @%)	
+	@mkdir -p $(OBJS_DIR)	
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
